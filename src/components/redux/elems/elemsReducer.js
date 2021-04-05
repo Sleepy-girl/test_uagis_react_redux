@@ -9,7 +9,7 @@ const elemsReduser = (state = [], { type, payload }) => {
     case elemsTypes.ADD_SUCCESS:
       return [...state, payload];
 
-    case elemsTypes.REMOVE_CONTACT:
+    case elemsTypes.REMOVE_ELEM:
       return [...state.filter((elem) => elem.id !== payload.id)];
 
     default:
@@ -26,7 +26,7 @@ const errorReducer = (state = null, action) => {
 
     case elemsTypes.ADD_REQUEST:
     case elemsTypes.GET_REQUEST:
-    case elemsTypes.REMOVE_CONTACT:
+    case elemsTypes.REMOVE_ELEM:
       return null;
 
     default:

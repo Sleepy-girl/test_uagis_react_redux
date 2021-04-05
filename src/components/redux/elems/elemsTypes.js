@@ -9,8 +9,8 @@ const ADD_ERROR = "-=elems/addError=-";
 const REMOVE_ELEM = "-=elems/removeElem=-";
 const REMOVE_ERROR = "-=elems/removeError=-";
 
-const LOADER_ON = "-=contacts/loaderOn=-";
-const LOADER_OFF = "-=contacts/loaderOff=-";
+const LOADER_ON = "-=elems/loaderOn=-";
+const LOADER_OFF = "-=elems/loaderOff=-";
 
 export default {
   GET_REQUEST,

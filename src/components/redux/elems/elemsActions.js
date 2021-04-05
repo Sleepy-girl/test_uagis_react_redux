@@ -34,7 +34,7 @@ const addElemError = (error) => ({
 //---------------------
 
 const removeElem = (id) => ({
-  type: elemsTypes.REMOVE_CONTACT,
+  type: elemsTypes.REMOVE_ELEM,
   payload: {
     id,
   },
