@@ -1,0 +1,55 @@
+@import "./fonts.css";
+@import "./normalize.css";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+input:focus,
+input:active,
+button:active,
+button:focus {
+  outline: none;
+}
