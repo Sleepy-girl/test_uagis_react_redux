@@ -4,21 +4,26 @@ import { ELemListStyled } from "./ElemListStyled";
 function ElemList() {
   return (
     <ELemListStyled>
-      <li className="item">
-        <span className="title" id="title" onChange={() => {}}>
-          Test
-        </span>
-        <span className="description" id="description" onChange={() => {}}>
-          test description
-        </span>
+      <ul>
+        <li className="item">
+          <span className="title" id="title" onChange={() => {}}>
+            Test
+          </span>
+          <span className="description" id="description" onChange={() => {}}>
+            test description
+          </span>
 
-        <ul className="systemEventList">
-          <li className="systemEventItem">
-            <div className="cirсle" />
-            <span className="systemEvent">Системна подія створена</span>
-          </li>
-        </ul>
-      </li>
+          <ul className="systemEventList">
+            <li className="systemEventItem">
+              <span className="systemEvent">Системна подія створена</span>
+            </li>
+            <li className="systemEventItem">
+              <span className="systemEvent">Системна подія створена</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <button type="button" onClick={() => {}}></button>
     </ELemListStyled>
   );
 }

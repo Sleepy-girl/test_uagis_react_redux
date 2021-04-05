@@ -2,6 +2,7 @@ export const colors = {
   title: "#FFFFFF",
   titleBackground: "#313549",
   description: "#979797",
+  descriptionBorder: "#bbbbbb",
   systemEvent: "#646464",
   circleGreen: "#CCFF66",
   circleEyellow: "#FCFC62",
