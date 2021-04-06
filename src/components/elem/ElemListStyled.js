@@ -2,6 +2,17 @@ import styled from "styled-components";
 import { colors } from "../../stylesheet/vars";
 
 export const ELemListStyled = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  width: 740px;
+
+  .item:not(:nth-child(3n)) {
+    margin-right: 40px;
+  }
+  .item:not(:nth-last-child(-n + 3)) {
+    margin-bottom: 40px;
+  }
+
   input,
   .item {
     text-align: center;
@@ -71,6 +82,7 @@ export const ELemListStyled = styled.ul`
   .add {
     width: 220px;
     min-height: 95px;
+    font-size: 20px;
     border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(209, 209, 209, 0.23);
   }

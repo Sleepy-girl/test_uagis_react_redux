@@ -13,10 +13,10 @@ export class ElemList extends Component {
     return (
       <ELemListStyled>
         {this.props.elems.map((elem) => (
-          <ElemItem key={elem.id} {...elem} />
+          <ElemItem className="listItem" key={elem.id} {...elem} />
         ))}
 
-        <li>
+        <li className="item">
           <button className="add" type="button" onClick={this.addElem}>
             Add element
           </button>
