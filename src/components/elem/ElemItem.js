@@ -16,12 +16,15 @@ class ElemItem extends Component {
   };
 
   editElem = (e) => {
+    console.log(`e.target`, e.target);
     const { id } = e.target;
     this.setState((prevState) => ({ [id]: !prevState[id] }));
   };
+
   removeElem = () => {
     this.props.onRemoveContact(this.props.id);
   };
+
   onHandleSubmit = () => {
     this.setState({ isTitleEdited: false, isDescriptionEdited: false });
 
@@ -38,11 +41,12 @@ class ElemItem extends Component {
     return (
       <li className="item">
         {!isTitleEdited ? (
-          <span className="title" id="isTitleEdited" onClick={this.edit}>
+          <span className="title" id="isTitleEdited" onClick={this.editElem}>
             {title}
           </span>
         ) : (
           <input
+            className="title"
             type="text"
             name="title"
             value={this.state.title}
@@ -60,6 +64,7 @@ class ElemItem extends Component {
           </span>
         ) : (
           <input
+            className="description"
             type="text"
             name="description"
             value={this.state.description}
@@ -77,7 +82,7 @@ class ElemItem extends Component {
           </li>
         </ul>
 
-        <button type="button" onClick={this.removeElem} className="remove">
+        <button className="remove" type="button" onClick={this.removeElem}>
           &#10060;
         </button>
       </li>

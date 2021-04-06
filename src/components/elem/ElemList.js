@@ -12,8 +12,8 @@ export class ElemList extends Component {
   render() {
     return (
       <ELemListStyled>
-        {this.props.elems.map((item) => (
-          <ElemItem {...item} />
+        {this.props.elems.map((elem) => (
+          <ElemItem key={elem.id} {...elem} />
         ))}
 
         <li>

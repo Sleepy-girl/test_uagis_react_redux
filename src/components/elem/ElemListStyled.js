@@ -2,28 +2,38 @@ import styled from "styled-components";
 import { colors } from "../../stylesheet/vars";
 
 export const ELemListStyled = styled.ul`
+  input,
+  .item {
+    text-align: center;
+  }
   .item {
     position: relative;
     width: 220px;
     min-height: 95px;
-    text-align: center;
     border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(209, 209, 209, 0.23);
   }
   span {
     display: block;
+  }
+  span,
+  input {
     line-height: 26px;
+  }
+  input {
+    width: 100%;
+    border: none;
   }
   .title {
     border-radius: 10px 10px 0 0;
     color: ${colors.title};
     background-color: ${colors.titleBackground};
   }
-
   .description {
     color: ${colors.description};
     border-bottom: solid 0.5px ${colors.descriptionBorder};
   }
+
   .systemEventList {
     padding: 8px 8px 8px 10px;
   }
@@ -66,19 +76,15 @@ export const ELemListStyled = styled.ul`
   }
   .add:hover,
   .add:focus {
-    background-color: ${colors.circleEyellow};
+    background-color: ${colors.circleGreen};
   }
   .remove {
     position: absolute;
-    top: 6px;
+    top: 0;
     right: 0;
-    width: 40px;
-    font-size: 14px;
+    width: 28px;
+    height: 28px;
+    font-size: 10px;
     background-color: rgba(0, 0, 0, 0);
-  }
-
-  .remove:hover,
-  .remove:focus {
-    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.4);
   }
 `;
