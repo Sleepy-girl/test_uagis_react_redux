@@ -17,7 +17,7 @@ export class ElemList extends Component {
         ))}
 
         <li>
-          <button type="button" onClick={this.addElem}>
+          <button className="add" type="button" onClick={this.addElem}>
             Add element
           </button>
         </li>

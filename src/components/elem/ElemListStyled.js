@@ -3,6 +3,7 @@ import { colors } from "../../stylesheet/vars";
 
 export const ELemListStyled = styled.ul`
   .item {
+    position: relative;
     width: 220px;
     min-height: 95px;
     text-align: center;
@@ -57,14 +58,27 @@ export const ELemListStyled = styled.ul`
     background-color: ${colors.circleEyellow};
     margin-left: 4px;
   }
-  button {
+  .add {
     width: 220px;
     min-height: 95px;
     border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(209, 209, 209, 0.23);
   }
-  button:hover,
-  button:focus {
+  .add:hover,
+  .add:focus {
     background-color: ${colors.circleEyellow};
+  }
+  .remove {
+    position: absolute;
+    top: 6px;
+    right: 0;
+    width: 40px;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .remove:hover,
+  .remove:focus {
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.4);
   }
 `;

@@ -15,11 +15,13 @@ class ElemItem extends Component {
     this.setState({ [name]: value });
   };
 
-  edit = (e) => {
+  editElem = (e) => {
     const { id } = e.target;
     this.setState((prevState) => ({ [id]: !prevState[id] }));
   };
-
+  removeElem = () => {
+    this.props.onRemoveContact(this.props.id);
+  };
   onHandleSubmit = () => {
     this.setState({ isTitleEdited: false, isDescriptionEdited: false });
 
@@ -52,7 +54,7 @@ class ElemItem extends Component {
           <span
             className="description"
             id="isDescriptionEdited"
-            onClick={this.edit}
+            onClick={this.editElem}
           >
             {description}
           </span>
@@ -65,6 +67,7 @@ class ElemItem extends Component {
             onBlur={this.onHandleSubmit}
           />
         )}
+
         <ul className="systemEventList">
           <li className="systemEventItem">
             <span className="systemEvent">Системна подія створена</span>
@@ -73,12 +76,17 @@ class ElemItem extends Component {
             <span className="systemEvent">Системна подія створена</span>
           </li>
         </ul>
+
+        <button type="button" onClick={this.removeElem} className="remove">
+          &#10060;
+        </button>
       </li>
     );
   }
 }
 const mapDispatchToProps = {
   onEditElem: elemsActions.editElem,
+  onRemoveContact: elemsActions.removeElem,
 };
 
 export default connect(null, mapDispatchToProps)(ElemItem);
