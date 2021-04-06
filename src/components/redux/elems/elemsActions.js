@@ -1,37 +1,15 @@
-import elemsTypes from "./elemsActions";
+import elemsTypes from "./elemsTypes";
+import { v4 as uuidv4 } from "uuid";
 
-const getElemsRequest = (elem) => ({
-  type: elemsTypes.GET_REQUEST,
-  payload: { ...elem },
+const addElem = () => ({
+  type: elemsTypes.ADD_ELEM,
+  payload: { id: uuidv4() },
 });
 
-const getElemsSuccess = (elems) => ({
-  type: elemsTypes.GET_SUCCESS,
-  payload: [...elems],
+const editElem = (elem) => ({
+  type: elemsTypes.EDIT_ELEM,
+  payload: elem,
 });
-
-const getElemsError = (error) => ({
-  type: elemsTypes.GET_ERROR,
-  payload: { error },
-});
-
-//---------------------
-
-const addElemRequest = () => ({
-  type: elemsTypes.ADD_REQUEST,
-});
-
-const addElemSuccess = (elem) => ({
-  type: elemsTypes.ADD_SUCCESS,
-  payload: { ...elem },
-});
-
-const addElemError = (error) => ({
-  type: elemsTypes.ADD_ERROR,
-  payload: { error },
-});
-
-//---------------------
 
 const removeElem = (id) => ({
   type: elemsTypes.REMOVE_ELEM,
@@ -40,20 +18,4 @@ const removeElem = (id) => ({
   },
 });
 
-const removeElemError = (error) => ({
-  type: elemsTypes.REMOVE_ERROR,
-  payload: { error },
-});
-
-export default {
-  getElemsRequest,
-  getElemsSuccess,
-  getElemsError,
-
-  addElemRequest,
-  addElemSuccess,
-  addElemError,
-
-  removeElem,
-  removeElemError,
-};
+export default { addElem, editElem, removeElem };

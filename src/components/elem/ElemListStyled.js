@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "../../stylesheet/vars";
 
-export const ELemListStyled = styled.div`
+export const ELemListStyled = styled.ul`
   .item {
     width: 220px;
     min-height: 95px;
@@ -48,7 +48,6 @@ export const ELemListStyled = styled.div`
     height: 9px;
     width: 9px;
     border-radius: 50pc;
-    /* padding: 2px; */
   }
   .systemEventItem:nth-child(odd)::before {
     background-color: ${colors.circleGreen};
@@ -57,5 +56,15 @@ export const ELemListStyled = styled.div`
   .systemEventItem:nth-child(even)::after {
     background-color: ${colors.circleEyellow};
     margin-left: 4px;
+  }
+  button {
+    width: 220px;
+    min-height: 95px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(209, 209, 209, 0.23);
+  }
+  button:hover,
+  button:focus {
+    background-color: ${colors.circleEyellow};
   }
 `;

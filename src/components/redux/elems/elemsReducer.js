@@ -1,33 +1,26 @@
 import { combineReducers } from "redux";
 import elemsTypes from "./elemsTypes";
 
-const elemsReduser = (state = [], { type, payload }) => {
-  switch (type) {
-    case elemsTypes.GET_SUCCESS:
-      return payload;
+const defaultElem = {
+  title: "Test",
+  description: "test description",
+  id: "testId",
+};
 
-    case elemsTypes.ADD_SUCCESS:
-      return [...state, payload];
+const elemsReduсer = (state = [defaultElem], { type, payload }) => {
+  switch (type) {
+    case elemsTypes.EDIT_ELEM:
+      return [
+        ...state.map((elem) =>
+          elem.id === payload.id ? { ...payload } : elem
+        ),
+      ];
+
+    case elemsTypes.ADD_ELEM:
+      return [...state, { ...defaultElem, id: payload.id }];
 
     case elemsTypes.REMOVE_ELEM:
       return [...state.filter((elem) => elem.id !== payload.id)];
-
-    default:
-      return state;
-  }
-};
-
-const errorReducer = (state = null, action) => {
-  switch (action.type) {
-    case elemsTypes.ADD_ERROR:
-    case elemsTypes.GET_ERROR:
-    case elemsTypes.REMOVE_ERROR:
-      return action.payload;
-
-    case elemsTypes.ADD_REQUEST:
-    case elemsTypes.GET_REQUEST:
-    case elemsTypes.REMOVE_ELEM:
-      return null;
 
     default:
       return state;
@@ -48,7 +41,6 @@ const loadingReducer = (state = false, { type }) => {
 };
 
 export default combineReducers({
-  elems: elemsReduser,
-  error: errorReducer,
+  elems: elemsReduсer,
   loading: loadingReducer,
 });

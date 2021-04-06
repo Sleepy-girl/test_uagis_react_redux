@@ -1,34 +1,41 @@
-import React from "react";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import elemsActions from "../redux/elems/elemsActions";
+import ElemItem from "./ElemItem";
 import { ELemListStyled } from "./ElemListStyled";
 
-function ElemList() {
-  return (
-    <ELemListStyled>
-      <ul>
-        <li className="item">
-          <span className="title" id="title" onChange={() => {}}>
-            Test
-          </span>
-          <span className="description" id="description" onChange={() => {}}>
-            test description
-          </span>
+export class ElemList extends Component {
+  addElem = () => {
+    this.props.onAddElem();
+  };
 
-          <ul className="systemEventList">
-            <li className="systemEventItem">
-              <span className="systemEvent">Системна подія створена</span>
-            </li>
-            <li className="systemEventItem">
-              <span className="systemEvent">Системна подія створена</span>
-            </li>
-          </ul>
+  render() {
+    return (
+      <ELemListStyled>
+        {this.props.elems.map((item) => (
+          <ElemItem {...item} />
+        ))}
+
+        <li>
+          <button type="button" onClick={this.addElem}>
+            Add element
+          </button>
         </li>
-      </ul>
-      <button type="button" onClick={() => {}}></button>
-    </ELemListStyled>
-  );
+      </ELemListStyled>
+    );
+  }
 }
 
-export default ElemList;
+const mapStateToProps = (state) => {
+  return {
+    elems: state.elems,
+    loading: state.loading,
+  };
+};
+const mapDispatchToProps = {
+  onAddElem: elemsActions.addElem,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(ElemList);
 
 /* <svg>
           <circle
