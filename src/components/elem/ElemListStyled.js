@@ -9,10 +9,6 @@ export const ELemListStyled = styled.ul`
   .item:not(:nth-child(3n)) {
     margin-right: 40px;
   }
-  /* .item:not(:nth-last-child(-n + 3)) {
-    margin-bottom: 40px;
-  } */
-
   input,
   .item {
     text-align: center;
