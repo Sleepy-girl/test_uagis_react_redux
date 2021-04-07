@@ -27,20 +27,6 @@ const elemsReduсer = (state = [defaultElem], { type, payload }) => {
   }
 };
 
-const loadingReducer = (state = false, { type }) => {
-  switch (type) {
-    case elemsTypes.LOADER_ON:
-      return true;
-
-    case elemsTypes.LOADER_OFF:
-      return false;
-
-    default:
-      return state;
-  }
-};
-
 export default combineReducers({
   elems: elemsReduсer,
-  loading: loadingReducer,
 });

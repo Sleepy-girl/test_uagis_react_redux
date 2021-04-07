@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import elemsActions from "../redux/elems/elemsActions";
+import { elemSelector } from "../redux/elems/elemsSelector";
 
 class ElemItem extends Component {
   state = {
@@ -16,7 +17,6 @@ class ElemItem extends Component {
   };
 
   editElem = (e) => {
-    console.log(`e.target`, e.target);
     const { id } = e.target;
     this.setState((prevState) => ({ [id]: !prevState[id] }));
   };
@@ -89,9 +89,13 @@ class ElemItem extends Component {
     );
   }
 }
+const mapStateToProps = (state, { id }) => {
+  const elem = elemSelector(state, id);
+  return { ...elem };
+};
 const mapDispatchToProps = {
   onEditElem: elemsActions.editElem,
   onRemoveContact: elemsActions.removeElem,
 };
 
-export default connect(null, mapDispatchToProps)(ElemItem);
+export default connect(mapStateToProps, mapDispatchToProps)(ElemItem);

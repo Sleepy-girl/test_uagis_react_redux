@@ -1,15 +1,12 @@
-import React, { Suspense } from "react";
-import LoaderComponent from "../loader/LoaderComponent";
+import React from "react";
 import ElemList from "../elem/ElemList";
 import { AppStyled } from "./AppStyled";
 
 function App() {
   return (
-    <Suspense fallback={<LoaderComponent />}>
-      <AppStyled>
-        <ElemList />
-      </AppStyled>
-    </Suspense>
+    <AppStyled>
+      <ElemList />
+    </AppStyled>
   );
 }
 

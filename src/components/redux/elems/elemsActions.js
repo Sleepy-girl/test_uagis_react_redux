@@ -18,12 +18,4 @@ const removeElem = (id) => ({
   },
 });
 
-const loaderOn = () => ({
-  type: elemsTypes.LOADER_ON,
-});
-
-const loaderOff = () => ({
-  type: elemsTypes.LOADER_OFF,
-});
-
-export default { addElem, editElem, removeElem, loaderOn, loaderOff };
+export default { addElem, editElem, removeElem };
