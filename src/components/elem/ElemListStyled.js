@@ -9,9 +9,9 @@ export const ELemListStyled = styled.ul`
   .item:not(:nth-child(3n)) {
     margin-right: 40px;
   }
-  .item:not(:nth-last-child(-n + 3)) {
+  /* .item:not(:nth-last-child(-n + 3)) {
     margin-bottom: 40px;
-  }
+  } */
 
   input,
   .item {
@@ -23,13 +23,18 @@ export const ELemListStyled = styled.ul`
     min-height: 95px;
     border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(209, 209, 209, 0.23);
+    margin-bottom: 40px;
   }
   span {
     display: block;
   }
   span,
   input {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     line-height: 26px;
+    padding: 0 10px;
   }
   input {
     width: 100%;
@@ -81,7 +86,7 @@ export const ELemListStyled = styled.ul`
   }
   .add {
     width: 220px;
-    min-height: 95px;
+    height: 100%;
     font-size: 20px;
     border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(209, 209, 209, 0.23);
